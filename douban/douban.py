@@ -37,18 +37,4 @@ for i in range(5):
     params = {'ck': ck, 'comment': random.random()}
     session.post(COMMENT_URL, headers=headers, data=params)
     time.sleep(5)
-
-# for i in range(5):
-#     group_page = session.get('https://www.douban.com/group/569879/discussion?start=' + str(i * 25), headers=headers).text
-#     soup = BeautifulSoup(group_page, 'html5lib')
-#     topics = soup.select('td.title a')
-#     for topic_link in topics:
-#         soup = BeautifulSoup(session.get(topic_link['href'], headers=headers).text, 'html5lib')
-#         images = soup.select('.link-report img')
-#         print(images)
-#         for image in images:
-#             with open(str(time.time()) + '.jpg', 'wb') as f:
-#                 print(image['src'].replace('.webp', 'jpg'))
-#                 f.write(session.get(image['src'].replace('.webp', 'jpg'), headers=headers).content)
-#             time.sleep(5)
 print('success')
